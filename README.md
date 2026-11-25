@@ -79,10 +79,12 @@ Pages или любой статический хостинг с HTTPS.
 | **Elysium AI** | `https://elysiumai.garden/v1` | `deepseek/deepseek-v4.1-flash` | `google/gemini-2.5-flash` |
 | **DeepSeek** | `https://api.deepseek.com/v1` | `deepseek-chat` | нет vision-модели |
 | **OpenCode** | `https://opencode.ai/inference/openai/v1` | `deepseek-v4.1-flash` | `google/gemini-2.5-flash`, если доступна |
+| **AI Juju** | Worker проекта + `/v1` | `deepseek-v4.1-flash-1017` | `gemini-3.8-flash` |
 | **Свой адрес** | любой OpenAI-совместимый | вводится вручную | вводится вручную |
 
 Для статической версии провайдер должен разрешать запросы из браузера (CORS).
 Elysium, DeepSeek и OpenCode проверены: preflight проходит, ответы приходят.
+AI Juju не разрешает CORS, поэтому в профиле используется Cloudflare Worker проекта.
 OpenRouter в этой проверке preflight не разрешил, поэтому в список не добавлен.
 
 Ключ хранится в `localStorage` под именем `fastchat.static.settings.v1`. История
@@ -143,9 +145,9 @@ OpenRouter в этой проверке preflight не разрешил, поэ�
 отдельный токен прокси.
 
 - Код и пошаговая инструкция: `worker/README.md`.
-- В настройках: «Свой адрес», адрес Worker + `/v1`, ключ = `PROXY_TOKEN`, модель =
-  `claude-fable-5` или другая из списка.
-- Модель для фото: `gemini-3.8-flash` или `claude-fable-5`.
+- В настройках выберите профиль «AI Juju»: адрес Worker + `/v1` уже подставлен,
+  ключ = `PROXY_TOKEN`, модель = `deepseek-v4.1-flash-1017`.
+- Модель для фото: `gemini-3.8-flash`.
 
 Альтернатива без Cloudflare: локальный режим `npm run dev:local` или `FastChat.exe`.
 Тогда API вызывается с компьютера, CORS не мешает, но телефон должен видеть компьютер
