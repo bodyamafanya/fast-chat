@@ -1,0 +1,31 @@
+{
+  "name": "Быстрый чат",
+  "short_name": "Чат",
+  "description": "Локальный чат с OpenAI-совместимым API: потоковый ответ, лимит контекста, сжатие истории. Ключ хранится в браузере.",
+  "lang": "ru",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FAF9F9",
+  "theme_color": "#00A882",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
