@@ -105,7 +105,7 @@ curl https://clinica-chat-proxy.ваш-аккаунт.workers.dev/v1/models \
 curl https://clinica-chat-proxy.ваш-аккаунт.workers.dev/v1/chat/completions \
   -H "Authorization: Bearer PROXY_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"model":"claude-fable-5","messages":[{"role":"user","content":"ping"}],"max_tokens":20}'
+  -d '{"model":"deepseek-v4.1-flash-1017","messages":[{"role":"user","content":"ping"}],"max_tokens":20}'
 ```
 
 ---
