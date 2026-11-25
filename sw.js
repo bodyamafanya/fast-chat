@@ -1,9 +1,9 @@
-/* Service worker «Быстрого чата».
+﻿/* Service worker «Быстрого чата».
  * Кэширует оболочку и статику. Запросы к API не кэшируются.
  * Регистрируется только по HTTPS или на localhost.
  */
 
-const CACHE = 'fast-chat-v1';
+const CACHE = 'fast-chat-v2';
 const ROOT = new URL('./', self.location).href;
 const SHELL = [
   ROOT,
@@ -67,3 +67,4 @@ self.addEventListener('fetch', (event) => {
     }),
   );
 });
+

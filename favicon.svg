@@ -1,7 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="16" fill="#00A882"/>
-  <path d="M16 20h32v20H31l-9 8v-8h-6z" fill="#FFFFFF"/>
-  <circle cx="25" cy="30" r="2.6" fill="#00A882"/>
-  <circle cx="32" cy="30" r="2.6" fill="#00A882"/>
-  <circle cx="39" cy="30" r="2.6" fill="#00A882"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0.00 0.00 24.00 24.00" width="24.00" height="24.00" role="img" aria-label="clinica"><defs><linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00C297"/><stop offset="1" stop-color="#00876A"/></linearGradient></defs><rect x="0" y="0" width="24.0000" height="24.0000" rx="6.2400" fill="url(#cg)"/><path d="M 4.9000 12.1500 L 7.7000 12.1500 L 9.3000 9.5500 L 11.0000 14.9500 L 12.9000 9.0500 L 14.5000 12.1500 L 19.1000 12.1500" fill="none" stroke="#FFFFFF" stroke-width="1.7800" stroke-linecap="round" stroke-linejoin="round"/></svg>
