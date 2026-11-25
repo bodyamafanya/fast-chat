@@ -1,0 +1,3 @@
+name = "clinica-chat-proxy"
+main = "worker.mjs"
+compatibility_date = "2026-11-25"
