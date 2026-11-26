@@ -3,7 +3,7 @@
  * Регистрируется только по HTTPS или на localhost.
  */
 
-const CACHE = 'fast-chat-v5';
+const CACHE = 'fast-chat-v6';
 const ROOT = new URL('./', self.location).href;
 const SHELL = [
   ROOT,
