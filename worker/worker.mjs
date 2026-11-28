@@ -41,11 +41,14 @@ function json(data, status, headers) {
   });
 }
 
+function bearerToken(request) {
+  const header = request.headers.get('Authorization') || '';
+  return header.replace(/^Bearer\s+/i, '').trim();
+}
+
 function authorized(request, env) {
   if (!env.PROXY_TOKEN) return false;
-  const header = request.headers.get('Authorization') || '';
-  const token = header.replace(/^Bearer\s+/i, '').trim();
-  return token === env.PROXY_TOKEN;
+  return bearerToken(request) === env.PROXY_TOKEN;
 }
 
 export default {
@@ -66,7 +69,17 @@ export default {
     }
 
     if (!authorized(request, env)) {
-      return json({ error: 'Неверный токен прокси.' }, 401, cors);
+      const token = bearerToken(request);
+      let message = 'Неверный токен прокси.';
+      if (!env.PROXY_TOKEN) {
+        message = 'Не задан секрет PROXY_TOKEN в Cloudflare.';
+      } else if (!token) {
+        message = 'Токен прокси не задан. Вставьте его в поле «Ключ API».';
+      } else if (token.toLowerCase().startsWith('rs_client_')) {
+        message =
+          'Похоже, это ключ AI Juju. Для прокси нужен отдельный токен PROXY_TOKEN, а не ключ провайдера.';
+      }
+      return json({ error: message }, 401, cors);
     }
 
     const headers = new Headers();
